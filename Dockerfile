@@ -1,11 +1,8 @@
-#Base Image
 FROM python:3.8.17-alpine3.18  
 
-# Working directory
 WORKDIR /app
 
-# Copy files 
-COPY ./techtrends .
+COPY ./techtrends /app
 
 # update pip 
 RUN pip install --upgrade pip
