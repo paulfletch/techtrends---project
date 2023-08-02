@@ -21,7 +21,12 @@ alogFormatter = logging.Formatter("%(levelname)s:%(name)s:%(asctime)s, %(message
 ahandler = logging.StreamHandler(sys.stdout)
 ahandler.setFormatter(alogFormatter)
 app_logger.addHandler(ahandler)
+
+
 app_logger.setLevel(logging.DEBUG)
+
+
+
 
 
 # global Varible for counting DB connections
