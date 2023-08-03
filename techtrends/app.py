@@ -4,29 +4,37 @@ import sys
 
 from flask import Flask, jsonify, json, render_template, request, url_for, redirect, flash
 from werkzeug.exceptions import abort
-from werkzeug.serving import WSGIRequestHandler
+#from werkzeug.serving import WSGIRequestHandler
+
+
 
 
 # Configure logger for Werkzeug (Web Server Gateway Interface)
 werkzeug_logger = logging.getLogger('werkzeug')
-wlogFormatter = logging.Formatter("%(levelname)s:%(name)s:%(message)s")
+w_logFormatter = logging.Formatter("%(levelname)s:%(name)s:%(message)s")
 whandler = logging.StreamHandler(sys.stdout)
-whandler.setFormatter(wlogFormatter)
+whandler.setFormatter(w_logFormatter)
 werkzeug_logger.addHandler(whandler)
 werkzeug_logger.setLevel(logging.DEBUG)
 
+w_errhandler = logging.StreamHandler(sys.stderr)
+w_errhandler.setLevel(logging.ERROR)
+w_errhandler.setFormatter(w_logFormatter)
+werkzeug_logger.addHandler(w_errhandler)
+
+
 # Configure logger for app  
 app_logger = logging.getLogger('app')
-alogFormatter = logging.Formatter("%(levelname)s:%(name)s:%(asctime)s, %(message)s'","%m/%d/%Y, %H:%M:%S")
-ahandler = logging.StreamHandler(sys.stdout)
-ahandler.setFormatter(alogFormatter)
-app_logger.addHandler(ahandler)
-
-
 app_logger.setLevel(logging.DEBUG)
+a_logFormatter = logging.Formatter("%(levelname)s:%(name)s:%(asctime)s, %(message)s","%m/%d/%Y, %H:%M:%S")
+a_handler = logging.StreamHandler(sys.stdout)
+a_handler.setFormatter(a_logFormatter)
+app_logger.addHandler(a_handler)
 
-
-
+errhandler = logging.StreamHandler(sys.stderr)
+errhandler.setLevel(logging.ERROR)
+errhandler.setFormatter(a_logFormatter)
+app_logger.addHandler(errhandler)
 
 
 # global Varible for counting DB connections
