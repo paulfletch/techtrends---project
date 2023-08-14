@@ -1,6 +1,6 @@
 # techtrends---project
 
-TechTrends is an online news sharing app writen in Python.  This project is used to demonstrate practices and tools that to improve the release and maintenance phases within an application's development lifecycle.
+TechTrends is an online news sharing app writen in Python.  This project is used to demonstrate practices and tools that can  improve the release and maintenance phases within an application's development lifecycle.
 
 The following activities were undertaken.
 
