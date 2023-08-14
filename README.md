@@ -1,17 +1,17 @@
 # techtrends---project
 
-TechTrends is a simple online news sharing platform.  This project demonstrated practices and tools to improve the application lifecycle throughout the release and maintenance phases.
+TechTrends is an online news sharing app writen in Python.  This project is used to demonstrate practices and tools that to improve the release and maintenance phases within an application's development lifecycle.
 
-The following tasks were undertaken.
+The following activities were undertaken.
 
-* Development endpoints for metrics and healthcheck and implement logging.
+* Development of endpoints for accessing metrics and performing healthchecks  Logging was also implemented.
   
-* Create a Dockerfile and build an image.  This was run in a local container.
+* The creation of a Dockerfile to build an image that was initially run in a local container.
 
-* Create a GitHub action to automate the packaging of the TechTrends Application  (Continuous Integration).  The GitHub action constructs a new image every new commit on the main branch.
+* The creation of a GitHub action to automate the packaging of the TechTrends Application  (Continuous Integration).  The GitHub action constructed a new image everytime new commit was made on the main branch.
 
-* A Kubernetes cluster was created on K3s using vagrant and VirtualBox.   Using a declarative approach (i.e. developing YAML manifests), the TechTrends apps was deployed.
+* The creation of a Kubernetes cluster using K3s, vagrant and VirtualBox.   Using a declarative approach (i.e. by developing YAML manifests), the TechTrends apps was deployed on the cluster.
 
-* Through the creation of help chards, a template configuration manager (Helm) was used to parameterise TechTrend manifests.
+* The creation of a Helm Chart to allow for the parameterisation of the TechTrend manifests enabling different types of deployment.
 
-*  ArgoCD was used to release the Techtrends application to a staging and production environments using the templated manifests from the Helm chart.  That is, an automated and templated procedure to deploy TechTends to multiple environments (Continuous Delivery).
+* The installtion of a kubernetes controller, ArgoCD.  This was used to sync the Techtrends application deployment to the desired state of a staging and production environment (as confugred by HeLm).  (Continuous Delivery).
